@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Bottom Tab Bar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  html, body { margin:0; padding:0; height:100%; font-family:sans-serif; -webkit-overflow-scrolling: touch; }
+
+  /* Bottom Tab Bar */
+  nav.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #181818;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+
+  nav.menu a {
+    color: #b0bfd8;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex: 1;
+    transition: all 0.2s ease-in-out;
+  }
+
+  nav.menu a i {
+    font-size: 24px;
+    margin-bottom: 3px;
+  }
+
+  nav.menu a:hover, nav.menu a.active {
+    color: #25D366; /* highlight color */
+    transform: scale(1.1);
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 1024px) { /* tablet */
+    nav.menu { height: 65px; }
+    nav.menu a { font-size: 11px; }
+    nav.menu a i { font-size: 22px; }
+  }
+
+  @media (max-width: 768px) { /* mobile */
+    nav.menu { height: 60px; }
+    nav.menu a { font-size: 10px; }
+    nav.menu a i { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Bottom Tab Bar -->
+<nav class="menu">
+  <a href="../index.html" class="active"><i class="fa fa-house"></i>Home</a>
+  <a href="search.html"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+  <a href="notification.html"><i class="fa fa-phone"></i>Call</a>
+  <a href="map.html"><i class="fa fa-map-marker-alt"></i>Map</a>
+  <a href="booknow.html"><i class="fa fa-book"></i>Book Now</a>
+</nav>
+
+<script>
+  // Active tab highlight
+  const links = document.querySelectorAll('nav.menu a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

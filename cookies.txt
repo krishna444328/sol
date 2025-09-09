@@ -1,0 +1,8 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.vecteezy.com	TRUE	/	FALSE	1999999999	__cf_bm	uLlMyDw6GaQ88SxrR1Bow0TSKR1uFkYYUz5oqHLn2nw-1757307711-1.0.1.1-hCI9ZJfmdM9WJqb4Sv4lHohVvGN3Tdbhcphy.5efsTUV5zyFegOXjyrs17.gEXn5GinulU8iipW3X.ZAFrphuO618baS0ME7JaFflghHN7E
+.vecteezy.com	TRUE	/	FALSE	1999999999	_cfuvid	mpkAgmCGGa3Q8D.RvqkfJWLZfc0MrlgK0ndwYRSepyI-1757307711641-0.0.1.1-604800000
+static.vecteezy.com	TRUE	/	FALSE	1999999999	SameSite	None
+upload.wikimedia.org	TRUE	/	FALSE	1999999999	WMF-Uniq	-DQSsGLtP7n7WLZIAczG4AJoAAEBAFvde4WLCivTzMjtlQxSdL9XzZbpfGQRbaEc
+upload.wikimedia.org	TRUE	/	FALSE	1999999999	SameSite	None
+

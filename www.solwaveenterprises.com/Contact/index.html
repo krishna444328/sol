@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Glowing Booking Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* ---------- Base Styles ---------- */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  background:#252432;
+  padding: 20px;
+}
+
+/* ---------- Neon Box Animation ---------- */
+@property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+.box {
+  position: relative;
+  width: 400px;
+  max-width: 90%;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #ff2770 0%,
+    #ff2770 5%,
+    transparent 5%,
+    transparent 40%,
+    #ff2770 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  animation: rotating 4s linear infinite;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  padding: 20px;
+}
+
+@keyframes rotating { 0%{--a:0deg} 100%{--a:360deg} }
+
+.box::before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #45f3ff 0%,
+    #45f3ff 5%,
+    transparent 5%,
+    transparent 40%,
+    #45f3ff 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  border-radius:20px;
+  animation: rotating 4s linear infinite;
+  animation-delay:-1s;
+  z-index: 0;
+}
+
+.box::after {
+  content:"";
+  position:absolute;
+  inset:4px;
+  background:#2d2d39;
+  border-radius:15px;
+  border:8px solid #25252b;
+  z-index: 0;
+}
+
+/* ---------- Booking Form ---------- */
+.formBox {
+  position: relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  background: rgba(0,0,0,0.2);
+  z-index:1000;
+  border-radius: 10px;
+  box-shadow: inset 0 10px 20px rgba(0,0,0,0.5);
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+  padding: 20px;
+  color:#fff;
+  width: 100%;
+}
+
+.formBox h2 {
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  font-weight:600;
+  text-align:center;
+  font-size: 1.4rem;
+}
+
+.formBox h2 i { 
+  color:#ff2770; 
+  text-shadow:0 0 5px #ff2770,0 0 30px #ff2770; 
+}
+
+.formBox input {
+  width: 100%;
+  padding:12px 15px;
+  outline:none;
+  font-size:1em;
+  color:#fff;
+  background: rgba(0,0,0,0.1);
+  border:2px solid #fff;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+.formBox input::placeholder { color:#999; }
+
+.formBox input[type="submit"] {
+  background:#45f3ff;
+  border:none;
+  font-weight:500;
+  color:#111;
+  cursor:pointer;
+  transition:0.5s;
+}
+
+.formBox input[type="submit"]:hover {
+  box-shadow:0 0 10px #45f3ff,0 0 60px #45f3ff;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:480px){
+  .box { 
+    width: 100%; 
+    padding: 15px;
+  }
+  .formBox h2 {
+    font-size: 1.2rem;
+  }
+}
+</style>
+<style>
+  /* html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family:sans-serif;
+    -webkit-overflow-scrolling: touch;
+    background: #252432;
+  } */
+
+  @property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  /* Neon glowing animated border for bottom tab bar */
+  nav.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 20px; /* thoda upar space */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 600px;
+    height: 70px;
+    background: #181818;
+    border-radius: 20px;
+    z-index: 999;
+    padding: 0 10px;
+    /* Neon border */
+    border: 4px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+    animation: neonBorder 4s linear infinite;
+  }
+
+  @keyframes neonBorder {
+    0% { --a: 0deg; }
+    100% { --a: 360deg; }
+  }
+
+  nav.menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 4px;
+    background: repeating-conic-gradient(
+      from var(--a),
+      #0ff 0%,
+      #0ff 5%,
+      transparent 5%,
+      transparent 40%,
+      #0ff 50%
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotating 4s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes rotating {
+    0% { --a: 0deg; }
+    100% { --a: 360deg; }
+  }
+
+  /* Tab links */
+  nav.menu a {
+    color: #b0bfd8;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex: 1;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    z-index: 1;
+  }
+
+  nav.menu a i {
+    font-size: 24px;
+    margin-bottom: 3px;
+  }
+
+  nav.menu a:hover, nav.menu a.active {
+    color: #25D366; /* highlight color */
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #25D366, 0 0 20px #25D366;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 1024px) { /* tablet */
+    nav.menu { height: 65px; }
+    nav.menu a { font-size: 11px; }
+    nav.menu a i { font-size: 22px; }
+  }
+
+  @media (max-width: 768px) { /* mobile */
+    nav.menu { height: 60px; }
+    nav.menu a { font-size: 10px; }
+    nav.menu a i { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <div class="formBox">
+    <h2><i class="fa-solid fa-calendar-check"></i> Book Now</h2>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="text" placeholder="Address" required>
+    <input type="submit" value="Submit Booking">
+  </div>
+</div>
+
+<!-- Neon Glowing Bottom Tab Bar -->
+<nav class="menu">
+  <a href="../index.html" class="active"><i class="fa fa-house"></i>Home</a>
+  <a href="https://wa.me/919887005337" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+  <a href="tel:+919351953802" ><i class="fa fa-phone"></i>Call</a>
+  <a href="https://maps.app.goo.gl/ar52JzuZ99WYgNj9A"><i class="fa fa-map-marker-alt"></i>Map</a>
+  <a href="../Contact/"><i class="fa fa-book"></i>Book Now</a>
+</nav>
+
+<script>
+  // Active tab highlight
+  const links = document.querySelectorAll('nav.menu a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

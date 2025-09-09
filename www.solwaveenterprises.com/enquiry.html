@@ -1,0 +1,91 @@
+<!-- ✅ Bootstrap CSS -->
+<link href="../cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- 🌞 Enquiry Form Section -->
+<section class="solar-enquiry-section py-5" style="background: #fdf9f5;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-uppercase">🌞 Get Your Free Solar Consultation</h2>
+      <p class="text-muted">Let us help you switch to solar. Fill in the details below and our expert will contact you shortly.</p>
+    </div>
+
+    <form class="solar-enquiry-form bg-white shadow p-4 rounded" method="POST" action="https://www.solwaveenterprises.com/enquiry_process.php">
+
+      <div class="row g-3">
+        <!-- Full Name -->
+        <div class="col-md-6">
+          <label for="fullname" class="form-label">Full Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="WhatsApp number preferred" required>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email ID</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email (optional)">
+        </div>
+
+        <!-- Pincode -->
+        <div class="col-md-6">
+          <label for="pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter pincode" required>
+        </div>
+
+        <!-- Monthly Bill -->
+        <div class="col-12">
+          <label class="form-label">Monthly Electricity Bill (Average)</label>
+          <select class="form-select" name="monthly_bill">
+            <option value="" selected disabled>Select one</option>
+            <option value="<1500">Less than ₹1500</option>
+            <option value="1500-3000">₹1500 - ₹3000</option>
+            <option value="3000-5000">₹3000 - ₹5000</option>
+            <option value=">5000">More than ₹5000</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div class="col-12">
+          <label for="message" class="form-label">Message / Requirement</label>
+          <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your solar requirement (Optional)"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-danger px-5 py-2 fw-bold rounded-pill">
+            🚀 Submit Enquiry
+          </button>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="col-12 text-center mt-3 text-muted small">
+          By submitting this form, you agree to our <a href="#" target="_blank">terms</a> & <a href="#" target="_blank">privacy policy</a>.
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ✅ Bootstrap JS (for responsiveness and dropdowns) -->
+<script src="../cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    
+@media (max-width: 576px) {
+  .solar-enquiry-section h2 {
+    font-size: 1.5rem;
+  }
+  .solar-enquiry-form {
+    padding: 1.5rem;
+  }
+  .btn {
+    font-size: 16px;
+  }
+}
+</style>
+
+</style>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Navbar</title>
+
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .logo-img {
+      height: 70px;   /* yaha value badha/samjha sakte ho */
+      width: auto;    /* width automatically adjust hogi */
+      object-fit: contain; /* image stretch nahi hogi */
+    }
+  </style>
+   <style>
+    .carousel-item img {
+      height: 500px;          /* Desktop ke liye fixed height */
+      object-fit: cover;      /* Image crop hogi but stretch nahi */
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 300px;        /* Tablet ke liye chhoti height */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .carousel-item img {
+        height: 200px;        /* Mobile ke liye aur chhoti height */
+      }
+    }
+  </style>
+  <style>
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+}
+@media (max-width: 900px) {
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-column {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+  }
+  .company-info {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+  }
+
+  .footer-column {
+  flex: 1 1 0;
+  min-width: 200px;
+  }
+
+  .company-info {
+    max-width: 300px;
+  }
+
+  .footer-column h2,
+  .footer-column h3 {
+    margin-bottom: 15px;
+  }
+
+  .footer-column p,
+  .footer-column li,
+  .footer-column a {
+    color: #f5f5f5;
+    font-size: 15px;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-column a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .social-icons i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #f5f5f5;
+  }
+
+  @media (max-width: 768px) {
+    .footer-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      text-align: left;
+    }
+    @media (max-width: 900px) {
+      .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-column {
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+      align-items: center;
+    }
+
+    .footer-column,
+    .company-info {
+      max-width: 100%;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+  }
+</style>
+
+  <style>
+  
+    /* Main Section */
+    .krishna40 {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Title */
+    .krishna41 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    /* Blog Container */
+    .krishna42 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    /* Blog Card */
+    .krishna43 {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+
+    .krishna43:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Blog Image */
+    .krishna44 {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    /* Blog Content */
+    .krishna45 {
+      padding: 15px;
+    }
+
+    .krishna46 {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .krishna47 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+    }
+
+    .krishna47:hover {
+      color: #a21c2d;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .krishna41 {
+        font-size: 1.5rem;
+      }
+      .krishna44 {
+        height: 180px;
+      }
+    }
+  </style>
+<style>
+  /* html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family:sans-serif;
+    -webkit-overflow-scrolling: touch;
+    background: #252432;
+  } */
+
+  @property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  /* Neon glowing animated border for bottom tab bar */
+  nav.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 105%;
+    max-width: 600px;
+    height: 70px;
+    background: #181818;
+    border-radius: 20px;
+    z-index: 999;
+    padding: 0 10px;
+    /* Neon border */
+    border: 4px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+    animation: neonBorder 4s linear infinite;
+  }
+
+  @keyframes neonBorder {
+    0% { --a: 0deg; }
+    100% { --a: 360deg; }
+  }
+
+  nav.menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 4px;
+    background: repeating-conic-gradient(
+      from var(--a),
+      #0ff 0%,
+      #0ff 5%,
+      transparent 5%,
+      transparent 40%,
+      #0ff 50%
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotating 4s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes rotating {
+    0% { --a: 0deg; }
+    100% { --a: 360deg; }
+  }
+
+  /* Tab links */
+  nav.menu a {
+    color: #b0bfd8;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex: 1;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    z-index: 1;
+  }
+
+  nav.menu a i {
+    font-size: 24px;
+    margin-bottom: 3px;
+  }
+
+  nav.menu a:hover, nav.menu a.active {
+    color: #25D366; /* highlight color */
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #25D366, 0 0 20px #25D366;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 1024px) { /* tablet */
+    nav.menu { height: 65px; }
+    nav.menu a { font-size: 11px; }
+    nav.menu a i { font-size: 22px; }
+  }
+
+  @media (max-width: 768px) { /* mobile */
+    nav.menu { height: 60px; }
+    nav.menu a { font-size: 10px; }
+    nav.menu a i { font-size: 20px; }
+  }
+</style>
+  <body>
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between flex-row">
+      
+      <!-- Logo -->
+      <!-- Logo -->
+<a class="navbar-brand" href="#">
+    <img src="../logo.png" alt="Logo" class="logo-img">
+  </a>
+  
+
+      <!-- Toggle Button (for mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about-us/">About Us</a></li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+              <li><a class="dropdown-item" href="../Chekra/">Chekra</a></li>
+              <li><a class="dropdown-item" href="../behra/">Behra</a></li>
+              <li><a class="dropdown-item" href="../binda/">Binda</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="../Blog/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="../Contact/">Contact Us</a></li>
+
+          <!-- Enquiry Button -->
+          <li class="nav-item">
+            <a href="../Contact/" class="btn btn-danger ms-lg-3">Enquiry Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Blogs Section -->
+  <div class="krishna40">
+    <h2 class="krishna41">Blogs</h2>
+
+    <div class="krishna42">
+      <!-- Blog Card 1 -->
+      <div class="krishna43">
+        <img src="blog1.jpeg" alt="Blog 1" class="krishna44">
+        <div class="krishna45">
+          <!-- <div class="krishna46">DEC 12, 2024 - FORBES</div>
+          <div class="krishna47">How Solwave Enterprises has a chance to become a home energy brand in India</div> -->
+        </div>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="krishna43">
+        <img src="blog3.jpeg" alt="Blog 2" class="krishna44">
+        <div class="krishna45">
+          <!-- <div class="krishna46">DEC 12, 2024 - BUSINESS TODAY</div>
+          <div class="krishna47">Solwave Enterprises raises $40 million in one of India’s largest solar VC deals</div> -->
+        </div>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="krishna43">
+        <img src="blog2.jpeg" alt="Blog 3" class="krishna44">
+        <div class="krishna45">
+          <!-- <div class="krishna46">DEC 12, 2024 - THE HINDU</div>
+          <div class="krishna47">Solwave Enterprises raises $40 million in Series B funding round</div> -->
+        </div>
+      </div>
+   
+      <!-- Blog Card 4 -->
+      <div class="krishna43">
+        <img src="blog4.jpeg" alt="Blog 3" class="krishna44">
+        <div class="krishna45">
+          <!-- <div class="krishna46">DEC 12, 2024 - THE HINDU</div>
+          <div class="krishna47">Solwave Enterprises raises $40 million in Series B funding round</div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER START -->
+<footer style="background-color: #a3252c; color: white; padding: 70px 20px; border-top-left-radius: 40px; border-top-right-radius: 40px;">
+  <div class="footer-wrapper">
+    <div class="footer-column company-info">
+      <h2>Solwave Enterprises</h2>
+      <p>Rooftop solar made simple. We don't just sell solar — we give you peace of mind.</p>
+      <p>📞 +91 9351953802</p>
+      <p>📧 solventerprises.com</p>
+      <div class="social-icons">
+       <i class="fa-brands fa-facebook"></i>
+     <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin-in"></i>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Our Projects</h3>
+      <ul>
+        <li><a href="../index.html">Homes</a></li>
+        <li><a href="../Commer/">Commercial</a></li>
+        <li><a href="../jjm/">JJM</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="../about-us/">About Us</a></li>
+        <li><a href="../Blog/">Blogs</a></li>
+        <li><a href="../Contact/">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Others</h3>
+      <ul>
+        <li><a href="../Chekra/">Chekra Solar</a></li>
+        <li><a href="../binda/">Binda</a></li>
+        <li><a href="../behra/">Behra</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>E-52, Amrapali Marg, Vaishali Nagar, Jaipur-302021</p>
+    <p>© 2025 Solwave Enterprises. Designed by <a href="https://www.rditsolutions.in/" style="color: white;" >Research And Development IT Solutions.</a></p>
+  </div>
+</footer>
+
+
+
+<!-- Neon Glowing Bottom Tab Bar -->
+<nav class="menu">
+  <a href="../index.html" class="active"><i class="fa fa-house"></i>Home</a>
+  <a href="https://wa.me/919887005337" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+  <a href="tel:+919351953802" ><i class="fa fa-phone"></i>Call</a>
+  <a href="https://maps.app.goo.gl/ar52JzuZ99WYgNj9A"><i class="fa fa-map-marker-alt"></i>Map</a>
+  <a href="../Contact/"><i class="fa fa-book"></i>Book Now</a>
+</nav>
+
+<script>
+  // Active tab highlight
+  const links = document.querySelectorAll('nav.menu a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+  <!-- Bootstrap JS Bundle (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

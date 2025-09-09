@@ -1,0 +1,36 @@
+/* Navbar CSS */
+.logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: #a3252c;
+  font-weight: 500;
+  margin-right: 18px;
+  transition: color 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #7a1a1f;
+}
+
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .navbar-brand {
+    margin-right: 0 !important;
+  }
+  .navbar-toggler {
+    margin-left: 10px;
+  }
+}

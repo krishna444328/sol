@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Navbar</title>
+
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .logo-img {
+      height: 70px;   /* yaha value badha/samjha sakte ho */
+      width: auto;    /* width automatically adjust hogi */
+      object-fit: contain; /* image stretch nahi hogi */
+    }
+  </style>
+   <style>
+    .carousel-item img {
+      height: 500px;          /* Desktop ke liye fixed height */
+      object-fit: cover;      /* Image crop hogi but stretch nahi */
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 300px;        /* Tablet ke liye chhoti height */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .carousel-item img {
+        height: 200px;        /* Mobile ke liye aur chhoti height */
+      }
+    }
+  </style>
+    <style>
+    .about-section {
+      padding: 50px 0;
+    }
+    .about-text h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .about-image {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+    .about-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+    <style>
+    .solutions-section {
+      background: #9a2c2c; /* red background */
+      padding: 60px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .solution-card {
+      overflow: hidden;
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .solution-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.5s ease;
+    }
+    .solution-card:hover img {
+      transform: scale(1.1); /* zoom effect */
+    }
+    .solution-title {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      background: rgba(0,0,0,0.4);
+      padding: 8px 0;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+  </style>
+  <style>
+    .project-card {
+  height: 100%;
+  min-height: 490px; /* image height badhane par card bhi bada ho */
+  max-height: 490px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .project-card img {
+  height: 250px;        /* sab images same height */
+  object-fit: cover;    /* crop ho ke same size */
+  width: 100%;
+    }
+    .project-card .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: left;
+  padding-bottom: 0;
+    }
+    .btn-custom {
+      width: 48%;
+    }
+
+    /* Row spacing thoda tight */
+    .row.g-4 {
+      --bs-gutter-x: 1rem; /* horizontal gap kam */
+    }
+
+    /* Card thodi wide ho jaye desktop pe */
+    @media (min-width: 992px) {
+      .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.5%; /* thoda wide (default 33.333%) */
+      }
+    }
+  </style>
+  <style>
+       .impact-section {
+      background: url("https://www.seci.co.in/frontend/assets/images/count-section.jpg") 
+      center/cover no-repeat;
+      padding: 50px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .impact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .impact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .impact-card {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 30px 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .impact-card i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: orange;
+    }
+
+    .impact-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .impact-card p {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    /* Hover / Tap effect */
+    .impact-card:hover {
+      background: rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    @media(max-width:600px){
+      .impact-card {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+
+  <style>
+
+    .epc-section {
+      background: #9c2f3a; /* Same red background */
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .epc-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #fff;  /* Heading inside same red background */
+    }
+
+    .epc-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .epc-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 25px 20px;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .epc-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .epc-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #f1f1f1;
+    }
+
+    /* Hover / Tap effect */
+    .epc-card:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    @media(max-width:600px){
+      .epc-card {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+ <style>
+       .work-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .work-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .video-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background: #000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media(max-width:600px){
+      .video-card video {
+        height: 200px;
+      }
+    }
+  </style>
+  <style>
+    .locations-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: url('https://sse-website.s3.ap-south-1.amazonaws.com/homes/india-map-bg.svg'); /* grid wali background image */
+      background-size: cover;
+    }
+
+    @media (max-width: 768px) {
+      .locations-section {
+        flex-direction: column;
+        padding: 40px 10px;
+      }
+      .locations-text, .locations-map {
+        padding: 10px;
+        min-width: 0;
+      }
+    }
+    
+
+    .locations-text {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+    }
+
+    .locations-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .locations-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .locations-map {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .locations-map img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .locations-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: url('https://sse-website.s3.ap-south-1.amazonaws.com/homes/india-map-bg.svg'); /* grid wali background image */
+      background-size: cover;
+    }
+
+    .locations-text {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+    }
+
+    .locations-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .locations-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .locations-map {
+      flex: 1;
+      min-width: 327px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .locations-map img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    /* ===== Icons Grid CSS ===== */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 40px auto;
+      max-width: 1100px;
+      padding: 0 20px;
+  }
+  @media (max-width: 768px) {
+    .locations-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .location-card {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 400px) {
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+    }
+    @media (max-width: 768px) {
+      .locations-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      .location-card {
+        width: 90vw;
+        max-width: 350px;
+      }
+    }
+    
+
+    .location-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .location-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .location-card img.loc-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 12px;
+    }
+
+    .location-card h3 {
+      margin: 10px 0 5px;
+      font-size: 20px;
+      color: #222;
+    }
+
+    .location-card p {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+  <style>
+        h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin:0px 0px 0px;;
+    }
+
+    /* Images Section */
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 40px 40px;
+    }
+
+    .images-grid img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .images-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Blogs Section */
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 40px 60px;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 15px;
+    }
+
+    .blog-meta {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .blog-content h3 {
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .blog-content p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+.card img {
+  width: 100%;
+  height: 220px;      /* fixed height */
+  object-fit: cover;  /* image crop hoke fit hogi, stretch nahi hogi */
+  border-radius: 10px 10px 0 0;
+}
+
+  </style>
+  <style>
+      .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .map-box,
+    .review-box {
+      flex: 1 1 350px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .qr-section {
+      background-color: #a3252c;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .qr-section img {
+         width: 180px;
+    height: 215px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial {
+      margin-top: 20px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stars {
+      color: #f39c12;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+    }
+  </style>
+<style>
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+}
+@media (max-width: 900px) {
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-column {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+  }
+  .company-info {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+  }
+
+  .footer-column {
+  flex: 1 1 0;
+  min-width: 200px;
+  }
+
+  .company-info {
+    max-width: 300px;
+  }
+
+  .footer-column h2,
+  .footer-column h3 {
+    margin-bottom: 15px;
+  }
+
+  .footer-column p,
+  .footer-column li,
+  .footer-column a {
+    color: #f5f5f5;
+    font-size: 15px;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-column a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .social-icons i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #f5f5f5;
+  }
+
+  @media (max-width: 768px) {
+    .footer-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      text-align: left;
+    }
+    @media (max-width: 900px) {
+      .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-column {
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+      align-items: center;
+    }
+
+    .footer-column,
+    .company-info {
+      max-width: 100%;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+  }
+</style>
+<style>
+  /* html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family:sans-serif;
+    -webkit-overflow-scrolling: touch;
+    background: #252432;
+  } */
+
+  @property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  /* Neon glowing animated border for bottom tab bar */
+  nav.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 105%;
+    max-width: 600px;
+    height: 70px;
+    background: #181818;
+    border-radius: 20px;
+    z-index: 999;
+    padding: 0 10px;
+    /* Neon border */
+    border: 4px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+    animation: neonBorder 4s linear infinite;
+  }
+
+  @keyframes neonBorder {
+    0% { --a: 0deg; }
+    100% { --a: 360deg; }
+  }
+
+  nav.menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 4px;
+    background: repeating-conic-gradient(
+      from var(--a),
+      #0ff 0%,
+      #0ff 5%,
+      transparent 5%,
+      transparent 40%,
+      #0ff 50%
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotating 4s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes rotating {
+    0% { --a: 0deg; }
+    100% { --a: 360deg; }
+  }
+
+  /* Tab links */
+  nav.menu a {
+    color: #b0bfd8;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex: 1;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    z-index: 1;
+  }
+
+  nav.menu a i {
+    font-size: 24px;
+    margin-bottom: 3px;
+  }
+
+  nav.menu a:hover, nav.menu a.active {
+    color: #25D366; /* highlight color */
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #25D366, 0 0 20px #25D366;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 1024px) { /* tablet */
+    nav.menu { height: 65px; }
+    nav.menu a { font-size: 11px; }
+    nav.menu a i { font-size: 22px; }
+  }
+
+  @media (max-width: 768px) { /* mobile */
+    nav.menu { height: 60px; }
+    nav.menu a { font-size: 10px; }
+    nav.menu a i { font-size: 20px; }
+  }
+</style>
+<body>
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between flex-row">
+      
+      <!-- Logo -->
+      <!-- Logo -->
+<a class="navbar-brand" href="#">
+    <img src="logo.png" alt="Logo" class="logo-img">
+  </a>
+  
+
+      <!-- Toggle Button (for mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us/">About Us</a></li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+              <li><a class="dropdown-item" href="Chekra/">Chekra</a></li>
+              <li><a class="dropdown-item" href="behra/">Behra</a></li>
+              <li><a class="dropdown-item" href="binda/">Binda</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="Blog/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="Gallery/">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact/">Contact Us</a></li>
+
+          <!-- Enquiry Button -->
+          <li class="nav-item">
+            <a href="Contact/" class="btn btn-danger ms-lg-3">Enquiry Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+
+  
+  <!-- Slider Start -->
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="Add%20a%20subheading%20(23).png" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First Slide</h5>
+          <p>This is the description of the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="Add%20a%20subheading%20(24).png" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second Slide</h5>
+          <p>This is the description of the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="Add%20a%20subheading%20(26).png" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third Slide</h5>
+          <p>This is the description of the third slide.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+
+
+  <!-- About Section Start -->
+  <section class="about-section">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Left Side Text -->
+        <div class="col-lg-7 about-text">
+          <h2>About Solwave Enterprises (SOLWAVE):</h2>
+          <p>
+            Solwave Enterprises, also known as SOLWAVE, is a solar energy company based in Jaipur, Rajasthan, committed to building a brighter and greener future through clean energy solutions. We specialize in providing affordable, innovative, and sustainable solar power systems to rural and urban communities.
+          </p>
+          <ul>
+            <li>Solar home lighting systems</li>
+            <li>Solar pumps for farmers</li>
+            <li>Solar street lights and charging stations</li>
+            <li>Solar training and awareness for women and youth</li>
+          </ul>
+          <p>
+            At SOLWAVE, we believe that clean energy is not just a product — it is a path to empowerment. Our mission is to make solar energy accessible to every home, every village, and every individual — starting from Rajasthan to the rest of India.
+          </p>
+          <p><em>“Our journey began with a dream — to bring light to every home and village still living in darkness.”</em></p>
+        </div>
+
+        <!-- Right Side Image -->
+        <div class="col-lg-5">
+          <div class="about-image">
+            <img src="IMG-20250714-WA0004.jpg" alt="Solar Poster">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+
+
+  <!-- Solar Solutions Section Start -->
+  <section class="solutions-section">
+    <div class="container">
+      <h2 class="mb-5 fw-bold">Our Solar Solutions</h2>
+      <div class="row g-4">
+        
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="solution-card">
+            <img src="https://plus.unsplash.com/premium_photo-1682148196781-8bbcdfd7f537?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29sYXIlMjBob21lfGVufDB8fDB8fHww" alt="Homes">
+            <div class="solution-title">Homes</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="solution-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ma9kDBxwVfflWZPHpErN3cb-LtwV9jLgPQ&s" alt="JJM">
+            <div class="solution-title">JJM</div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="solution-card">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800" alt="Commercial">
+            <div class="solution-title">Commercial</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Solar Solutions Section End -->
+
+
+  <!-- Projects Section -->
+
+  <div class="container py-5">
+  <h2 class="text-center mb-4">Our Projects</h2>
+  <div class="row g-4 row-cols-1 row-cols-md-3">
+
+      <!-- Card 1 -->
+  <div class="col-12 col-md-4">
+        <div class="card project-card shadow-sm">
+          <img src="WhatsApp%20Image%202025-07-19%20at%2012.47.05%20PM.jpg" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Bindwa Khade</h5>
+            <p class="card-text">
+              The Bindwa Khade Solar Project, commissioned on 13th July 2025 in Uttar Pradesh,
+              is a key step toward rural solar electrification.
+            </p>
+            <div class="d-flex justify-content-between">
+             <a href="Contact/" class="btn btn-danger btn-custom">Book Now</a>
+              <a href="Contact/"" class="btn btn-primary btn-custom">Enquiry Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+  <div class="col-12 col-md-4">
+        <div class="card project-card shadow-sm">
+          <img src="WhatsApp%20Image%202025-07-19%20at%2012.45.23%20PM%20(1).jpg" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Chakar Nagar</h5>
+            <p class="card-text">
+              The Chakar Nagar Solar Project in Uttar Pradesh focuses on bringing
+              sustainable energy to underserved rural areas.
+            </p>
+            <div class="d-flex justify-content-between">
+              <a href="Contact/" class="btn btn-danger btn-custom">Book Now</a>
+              <a href="Contact/"" class="btn btn-primary btn-custom">Enquiry Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+  <div class="col-12 col-md-4">
+        <div class="card project-card shadow-sm">
+          <img src="WhatsApp%20Image%202025-07-19%20at%2012.45.25%20PM.jpg" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Behra, Uttar Pradesh</h5>
+            <p class="card-text">
+              The Behra Solar Project in Uttar Pradesh is a step forward in empowering
+              rural communities with renewable energy.
+            </p>
+            <div class="d-flex justify-content-between">
+              <a href="Contact/" class="btn btn-danger btn-custom">Book Now</a>
+              <a href="Contact/"" class="btn btn-primary btn-custom">Enquiry Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="impact-section">
+    <h2>Impact</h2>
+    <div class="impact-cards">
+      <div class="impact-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Projects Commissioned</h3>
+        <p>30+ GW</p>
+      </div>
+      <div class="impact-card">
+        <i class="fas fa-clock"></i>
+        <h3>Projects Under Implementation</h3>
+        <p>23 GW</p>
+      </div>
+      <div class="impact-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Emissions Reduction</h3>
+        <p>~68 Million Metric Tonne CO₂</p>
+      </div>
+      <div class="impact-card">
+        <i class="fas fa-solar-panel"></i>
+        <h3>Green Energy Generated</h3>
+        <p>52 BU</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="epc-section">
+    <h2>We Provide Complete EPC Solutions</h2>
+    <div class="epc-cards">
+      <div class="epc-card">
+        <h3>SITE APPROVAL</h3>
+        <p>We offer a free site visit to evaluate Customer requirement, Solar Size, Criteria for Capital Subsidy/availability of shadow free Rooftop Area.</p>
+      </div>
+      <div class="epc-card">
+        <h3>SOLAR PLANT DESIGNING</h3>
+        <p>It includes Engineering Design/ Selection of Brands, Equipments Specifications/ Plant Layout/ Connection Diagram.</p>
+      </div>
+      <div class="epc-card">
+        <h3>INSTALLATION & COMMISSIONING</h3>
+        <p>Equipments Supply/ Civil Construction/ Erection & Commissioning/ Operation & Maintenance/ Plant Handover.</p>
+      </div>
+      <div class="epc-card">
+        <h3>DOCUMENTATION PROCESS</h3>
+        <p>Solar Net Metering and Project Completion Report of Grid Connected Solar Project under Capital Subsidy scheme.</p>
+      </div>
+    </div>
+  </section>
+
+<section class="work-section">
+    <h2>Our Work in Action</h2>
+    <div class="video-gallery">
+      <div class="video-card">
+        <video autoplay muted loop>
+          <source src="WhatsApp%20Video%202025-07-28%20at%201.41.36%20PM.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-card">
+        <video autoplay muted loop>
+          <source src="WhatsApp%20Video%202025-09-06%20at%2011.41.54%20AM.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-card">
+        <video autoplay muted loop>
+          <source src="WhatsApp%20Video%202025-07-28%20at%201.41.38%20PM.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+
+ <!-- Section: Text + Map -->
+  <section class="locations-section">
+    <!-- Left Text -->
+    <div class="locations-text">
+      <h2>Solwave Enterprises</h2>
+      <h3>Locations</h3>
+      <p>
+        We offer solar services in 20+ Indian cities,  
+        and are expanding every day!
+      </p>
+    </div>
+
+    <!-- Right Map -->
+    <div class="locations-map">
+      <img src="../solwaveenterprises.com/ChatGPT%20Image%20Jul%2028%2c%202025%2c%2006_03_16%20PM.png" alt="India Map">
+    </div>
+  <!-- </section> -->
+
+  <!-- Section: Locations Icons Grid -->
+  <section class="locations-grid">
+    <div class="location-card">
+      <img src="../sse-website.s3.ap-south-1.amazonaws.com/homes/Gujarat.png" alt="Gujarat" class="loc-icon">
+      <h3>Gujarat</h3>
+      <p>Ahmedabad, Surat</p>
+    </div>
+    <div class="location-card">
+      <img src="../sse-website.s3.ap-south-1.amazonaws.com/homes/Maharashtra.png" alt="Maharashtra" class="loc-icon">
+      <h3>Maharashtra</h3>
+      <p>Nagpur, Pune, Nashik, Chhatrapati Sambhajinagar, Kolhapur, Amravati</p>
+    </div>
+    <div class="location-card">
+      <img src="../sse-website.s3.ap-south-1.amazonaws.com/homes/MP.png" alt="Madhya Pradesh" class="loc-icon">
+      <h3>Madhya Pradesh</h3>
+      <p>Bhopal, Indore, Gwalior</p>
+    </div>
+    <div class="location-card">
+      <img src="../sse-website.s3.ap-south-1.amazonaws.com/homes/MP.png" alt="Karnataka" class="loc-icon">
+      <h3>Karnataka</h3>
+      <p>Bengaluru, Mysuru</p>
+    </div>
+    <div class="location-card">
+      <img src="../sse-website.s3.ap-south-1.amazonaws.com/homes/Rajasthan.png" alt="Rajasthan" class="loc-icon">
+      <h3>Rajasthan</h3>
+      <p>Jaipur</p>
+    </div>
+    <div class="location-card">
+      <img src="../sse-website.s3.ap-south-1.amazonaws.com/homes/UP.png" alt="Uttar Pradesh" class="loc-icon">
+      <h3>Uttar Pradesh</h3>
+      <p>Lucknow, Varanasi, Kanpur</p>
+    </div>
+    <div class="location-card">
+      <img src="../sse-website.s3.ap-south-1.amazonaws.com/homes/Others.png" alt="Others" class="loc-icon">
+      <h3>Others</h3>
+      <p>Delhi NCR, Telangana</p>
+    </div>
+  </section>
+
+</section>
+
+
+
+ <!-- Images Section -->
+  <h2>Images Solwave Enterprises</h2>
+  <section class="images-grid">
+    <img src="WhatsApp%20Image%202025-07-19%20at%201.37.56%20PM.jpg" alt="Solar Image 1" style="height: 220px;">
+    <img src="WhatsApp%20Image%202025-07-19%20at%201.38.00%20PM.jpg" alt="Solar Image 2" style="height: 220px;">
+    <img src="WhatsApp%20Image%202025-07-19%20at%201.38.01%20PM%20(1).jpg" alt="Solar Image 3" style="height: 220px;">
+    <img src="WhatsApp%20Image%202025-07-19%20at%201.38.01%20PM.jpg" alt="Solar Image 4" style="height: 220px;">
+  </section>
+
+  <!-- Blogs Section -->
+  <h2>Blogs</h2>
+  <section class="blogs-grid">
+    <div class="blog-card">
+      <img src="WhatsApp%20Image%202025-07-19%20at%201.37.56%20PM.jpg" alt="Blog 1">
+      <div class="blog-content">
+        <div class="blog-meta">DEC 12, 2024 - FORBES</div>
+        <h3>How Solwave Enterprises has a chance to become a leader...</h3>
+        <p>Short intro text of blog...</p>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="WhatsApp%20Image%202025-07-19%20at%201.38.04%20PM.jpg" alt="Blog 2">
+      <div class="blog-content">
+        <div class="blog-meta">DEC 12, 2024 - BUSINESS TODAY</div>
+        <h3>Solwave Enterprises raises $40 million in one of...</h3>
+        <p>Short intro text of blog...</p>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="WhatsApp%20Image%202025-07-19%20at%201.38.00%20PM.jpg" alt="Blog 3">
+      <div class="blog-content">
+        <div class="blog-meta">DEC 12, 2024 - THE HINDU</div>
+        <h3>Solwave Enterprises continues its expansion with...</h3>
+        <p>Short intro text of blog...</p>
+      </div>
+    </div>
+  </section>
+ 
+<div class="container">
+    <!-- Google Map -->
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.0536683574023!2d75.7025033!3d26.9017918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db4a157c51ae1%3A0x1b71e7a42fcc7e!2sSolwave%20Enterprises!5e0!3m2!1sen!2sin!4v1752921392680!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- QR and Review -->
+    <div class="review-box">
+      <div class="qr-section">
+        <img src="WhatsApp%20Image%202025-09-06%20at%209.02.11%20AM.jpg" alt="QR Code" />
+        <h3>Scan & Review</h3>
+        <p>Leave your feedback quickly!</p>
+      </div>
+
+      <div class="testimonial">
+        <p>"Amazing experience! Highly recommended."</p>
+        <div class="stars">★★★★☆</div>
+        <p>- Ramesh K.</p>
+      </div>
+    </div>
+  </div>
+
+<!-- FOOTER START -->
+<footer style="background-color: #a3252c; color: white; padding: 70px 20px; border-top-left-radius: 40px; border-top-right-radius: 40px;">
+  <div class="footer-wrapper">
+    <div class="footer-column company-info">
+      <h2>Solwave Enterprises</h2>
+      <p>Rooftop solar made simple. We don't just sell solar — we give you peace of mind.</p>
+      <p>📞 +91 9351953802</p>
+      <p>📧 solventerprises.com</p>
+      <div class="social-icons">
+    <i class="fa-brands fa-facebook"></i>
+     <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin-in"></i>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Our Projects</h3>
+      <ul>
+        <li><a href="index.html">Homes</a></li>
+        <li><a href="Commer/">Commercial</a></li>
+        <li><a href="jjm/">JJM</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about-us/">About Us</a></li>
+        <li><a href="Blog/">Blogs</a></li>
+        <li><a href="Contact/">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Others</h3>
+      <ul>
+        <li><a href="Chekra/">Chekra Solar</a></li>
+        <li><a href="binda/">Binda</a></li>
+        <li><a href="behra/">Behra</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>E-52, Amrapali Marg, Vaishali Nagar, Jaipur-302021</p>
+    <p>© 2025 Solwave Enterprises. Designed by <a href="https://www.rditsolutions.in/" style="color: white;" >Research And Development IT Solutions.</a></p>
+  </div>
+</footer>
+<!-- Bottom Tab Bar -->
+<nav class="menu">
+  <a href="index.html" class="active"><i class="fa fa-house"></i>Home</a>
+  <a href="https://wa.me/919887005337" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+  <a href="tel:+919351953802"><i class="fa fa-phone"></i>Call</a>
+  <a href="https://maps.app.goo.gl/ar52JzuZ99WYgNj9A"><i class="fa fa-map-marker-alt"></i>Map</a>
+  <a href="Contact/"><i class="fa fa-book"></i>Book Now</a>
+</nav>
+
+<script>
+  // Active tab highlight
+  const links = document.querySelectorAll('nav.menu a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+  <!-- Bootstrap JS Bundle (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
